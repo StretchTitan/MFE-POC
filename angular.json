@@ -127,6 +127,7 @@
   },
   "defaultProject": "mfe-wrapper",
   "cli": {
+    "defaultCollection": "@ngrx/schematics",
     "analytics": false
   }
 }

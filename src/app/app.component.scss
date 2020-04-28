@@ -5,3 +5,50 @@
     text-align: center;
     background-color: darkblue;
 }
+
+.nav {
+    height: 40px;
+    width: 100%;
+    background: lightslategray;
+    display: flex;
+    justify-content: center;
+
+    &--link {
+        height: 100%;
+        display: flex;
+        padding: 0 20px;
+        margin: 0 10px;
+        color: white;
+        align-items: center;
+        text-decoration: none;
+    }
+}
+
+.name_form {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+
+    &--input {
+        height: 16px;
+        width: 150px;
+        padding: 8px;
+        margin: 0 8px;
+    }
+
+    button {
+        display: flex;
+        border: none;
+        padding: 8px 16px;
+        margin-left: 8px;
+        text-decoration: none;
+        background: darkblue;
+        color: #ffffff;
+        font-size: 12px;
+        cursor: pointer;
+        text-align: center;
+        align-items: center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}
