@@ -7,5 +7,6 @@
     <input class="name_form--input" type="text" formControlName="firstName" placeholder="First Name">
     <input class="name_form--input" type="text" formControlName="lastName" placeholder="Last Name">
     <button (click)="submitForm()">Set Name</button>
+    <div class="set_name">{{ setName | async }}</div>
 </form>
 <router-outlet></router-outlet>
