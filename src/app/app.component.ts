@@ -24,7 +24,6 @@ export class AppComponent {
   }
 
   submitForm() {
-    console.log(this.nameForm.value);
     this.store.dispatch(setName(this.nameForm.value));
   }
 }
