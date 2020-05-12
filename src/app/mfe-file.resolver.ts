@@ -18,7 +18,7 @@ export class MfeFileResolver implements Resolve<any> {
   };
 
   resolve(route: ActivatedRouteSnapshot): Promise<any> {
-    return this.load(route.routeConfig.path);
+    return this.load(route.url[0].path);
   }
 
   load(route): Promise<any> {
