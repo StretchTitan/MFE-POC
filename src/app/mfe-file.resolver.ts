@@ -8,11 +8,11 @@ import {
 export class MfeFileResolver implements Resolve<any> {
   config = {
     home: {
-      path: 'http://localhost:4201/main.js',
+      path: 'http://local.spectrum-poc.net:4201/main.js',
       id: 'homepage-bundle',
     },
     billing: {
-      path: 'http://localhost:4202/main.js',
+      path: 'http://local.spectrum-poc.net:4202/main.js',
       id: 'billing-bundle',
     },
   };
