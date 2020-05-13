@@ -10,4 +10,5 @@ Add this mapping to your hosts file to access this application in the browser.
 
 - Run `npm start` to run only the MFE Wrapper application.
 - Run `npm run start:all` to execute a script to run the wrapper and all other MFEs as one application
+  - In order for this script to work, all MFE application need to be siblings in a directory/folder
   - Add 'prod' as an argument to run all in prod mode. Ex. `npm run start:all prod` 
