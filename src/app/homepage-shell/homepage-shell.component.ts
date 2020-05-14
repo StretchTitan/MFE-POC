@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import { selectName } from '../store/selectors/name/name.selectors';
 import * as nameActions from '../store/actions/name/name.actions';
-import { of, Observable } from 'rxjs';
-import { Router, RouterStateSnapshot, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -15,12 +15,12 @@ import { map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomepageShellComponent {
-  nameState;
-  routerState: Observable<any> = of({});
+  nameState$: Observable<any>;
+  routerState$: Observable<any>;
 
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {
-    this.nameState = store.select(selectName);
-    this.routerState = route.url.pipe(map(segments => `/${segments.join('/')}`  ));
+    this.nameState$ = store.select(selectName);
+    this.routerState$ = route.url.pipe(map(segments => `/${segments.join('/')}`  ));
   }
 
   handleMessage(e) {
