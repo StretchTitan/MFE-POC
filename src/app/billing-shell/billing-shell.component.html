@@ -1,1 +1,7 @@
-<mfe-poc-billing [nameState$]="nameState$" (msg)="handleMessage($event)"></mfe-poc-billing>
+<ng-template #error>Loading failed...</ng-template>
+<ng-template #loading>Loading...</ng-template>
+<mfe-poc-billing
+    *axLazyElement="'http://local.spectrum-poc.net:4202/main.js'; module: true; loadingTemplate: loading; errorTemplate: error"
+    [nameState$]="nameState$"
+    (msg)="handleMessage($event)">
+</mfe-poc-billing>

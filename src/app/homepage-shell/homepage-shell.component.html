@@ -1,1 +1,8 @@
-<mfe-poc-homepage [nameState$]="nameState$" [routerState$]="routerState$" (msg)="handleMessage($event)"></mfe-poc-homepage>
+<ng-template #error>Loading failed...</ng-template>
+<ng-template #loading>Loading...</ng-template>
+<mfe-poc-homepage
+    *axLazyElement="'http://local.spectrum-poc.net:4201/main.js'; module: true; loadingTemplate: loading; errorTemplate: error"
+    [nameState$]="nameState$"
+    [routerState$]="routerState$"
+    (msg)="handleMessage($event)">
+</mfe-poc-homepage>
