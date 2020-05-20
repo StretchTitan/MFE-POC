@@ -1,3 +1,6 @@
+/* This is an unused file. It is sticking around for a bit incase there are issues with the @angular-extensions/elements lazy loading. */
+/* The library is working great so this can probably be removed after some more implementations. */
+
 import { Injectable } from '@angular/core';
 import {
   Resolve,
