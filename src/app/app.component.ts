@@ -17,10 +17,10 @@ export class AppComponent {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
   });
-  setName;
+  name$: Observable<string>;
 
   constructor(private store: Store<AppState>) {
-    this.setName = this.store.select(selectName).pipe(map(name => `Set Name: ${name.firstName} ${name.lastName}`));
+    this.name$ = this.store.select(selectName).pipe(map(name => `Set Name: ${name.firstName} ${name.lastName}`));
   }
 
   submitForm() {

@@ -8,7 +8,7 @@ export function homeMatcher(url: UrlSegment[]) {
   return url.length >= 1 && url[0].path === 'home' ? ({consumed: url}) : null;
 }
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     matcher: homeMatcher,
     component: HomepageShellComponent,
