@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { HomepageShellComponent } from './homepage-shell/homepage-shell.component';
 import { BillingShellComponent } from './billing-shell/billing-shell.component';
 import { StoreModule } from '@ngrx/store';
+import { CustomLazyRegistry } from 'mfe-services-pipes';
 import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { CustomLazyRegistry } from './custom-lazy-registry';
 
 @NgModule({
   declarations: [
