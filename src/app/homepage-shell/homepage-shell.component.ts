@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import { selectName } from '../store/selectors/name/name.selectors';
 import * as nameActions from '../store/actions/name/name.actions';
+import * as alertActions from '../store/actions/alert/alert.actions';
+import * as panelActions from '../store/actions/panel/panel.actions';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
@@ -24,6 +26,22 @@ export class HomepageShellComponent {
   }
 
   handleMessage(e) {
-    this.store.dispatch(nameActions[e.detail.action]());
+    let action;
+
+    switch (e.detail.action) {
+      case 'setName':
+        action = nameActions[e.detail.action];
+        break;
+      case 'setAlert':
+        action = alertActions[e.detail.action];
+        break;
+      case 'setPanel':
+        action = panelActions[e.detail.action];
+        break;
+      default:
+        break;
+    }
+
+    this.store.dispatch(action(e.detail.payload));
   }
 }
