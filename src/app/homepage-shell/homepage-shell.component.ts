@@ -30,6 +30,7 @@ export class HomepageShellComponent {
 
     switch (e.detail.action) {
       case 'setName':
+      case 'clearName':
         action = nameActions[e.detail.action];
         break;
       case 'setAlert':

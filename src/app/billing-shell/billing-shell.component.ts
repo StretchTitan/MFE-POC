@@ -25,6 +25,7 @@ export class BillingShellComponent {
 
     switch (detail.action) {
       case 'setName':
+      case 'clearName':
         action = nameActions[detail.action];
         break;
       case 'setAlert':

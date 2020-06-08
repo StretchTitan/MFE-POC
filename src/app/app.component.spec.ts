@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { setName } from './store/actions/name/name.actions';
 import { selectName } from './store/selectors/name/name.selectors';
 import { of } from 'rxjs';
+import { selectPanelState } from './store/selectors/panel/panel.selectors';
+import { selectAlertState } from './store/selectors/alert/alert.selectors';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -15,6 +17,17 @@ describe('AppComponent', () => {
     name: {
       firstName: '',
       lastName: ''
+    },
+    alert: {
+      title: '',
+      message: '',
+      isShown: false,
+    },
+    panel: {
+      title: '',
+      message: '',
+      components: [],
+      isShown: false,
     }
   };
 
@@ -49,7 +62,9 @@ describe('AppComponent', () => {
 
   it('should populate setName on construction', async(() => {
     expect(store.select).toHaveBeenCalledWith(selectName);
-    expect(store.select).toHaveBeenCalledTimes(1);
+    expect(store.select).toHaveBeenCalledWith(selectAlertState);
+    expect(store.select).toHaveBeenCalledWith(selectPanelState);
+    expect(store.select).toHaveBeenCalledTimes(3);
 
     component.name$.subscribe(name => expect(name).toEqual('Set Name: Louis Armstrong'));
   }));
