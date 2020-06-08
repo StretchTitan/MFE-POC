@@ -1,0 +1,5 @@
+<div class="alert" *ngIf="alert$ | async as a">
+    <h4>{{ a.title }}</h4>
+    <p>{{ a.message }}</p>
+    <button (click)="closeAlert()">Dismiss</button>
+</div>

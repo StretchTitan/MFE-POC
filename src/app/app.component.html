@@ -8,5 +8,11 @@
     <input class="name_form--input" type="text" formControlName="lastName" placeholder="Last Name">
     <button (click)="submitForm()">Set Name</button>
     <div class="set_name">{{ name$ | async }}</div>
+    <button class="alert-button" (click)="showAlert()">Show Alert</button>
+    <button class="panel-button" (click)="showPanel()">Show Panel</button>
+    <button class="drawer-button" (click)="toggleDrawer()">Toggle Drawer</button>
 </form>
+<div class="drawer" [ngClass]="{'isOpen': isDrawerOpen}">Fancy Drawer</div>
 <router-outlet></router-outlet>
+<app-alert *ngIf="alert$ | async as a" class="alert-overlay" [ngClass]="{'visible': a.isShown}"></app-alert>
+<app-panel *ngIf="panel$ | async as p" class="panel-overlay" [ngClass]="{'visible': p.isShown}"></app-panel>

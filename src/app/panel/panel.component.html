@@ -1,0 +1,16 @@
+<div class="panel" *ngIf="panel$ | async as p">
+    <h4>{{ p.title }}</h4>
+    <p>{{ p.message }}</p>
+    <ng-template #error>Loading failed...</ng-template>
+    <ng-template #loading>Loading...</ng-template>
+    <div *ngIf="p.components.indexOf('card') > -1">
+        <mfe-card *axLazyElement="'http://local.spectrum-poc.net:4203/shared-card.js'; loadingTemplate: loading; errorTemplate: error"></mfe-card>
+    </div>
+    <div *ngIf="p.components.indexOf('widget') > -1">
+        <mfe-widget *axLazyElement="'http://local.spectrum-poc.net:4203/shared-widget.js'; loadingTemplate: loading; errorTemplate: error" [counter$]="counter$"></mfe-widget>
+    </div>
+    <div *ngIf="p.components.indexOf('homepage-widget') > -1">
+        <mfe-homepage-widget *axLazyElement="'http://local.spectrum-poc.net:4204/shared-homepage-widget.js'; loadingTemplate: loading; errorTemplate: error"></mfe-homepage-widget>
+    </div>
+    <button (click)="closePanel()">Dismiss</button>
+</div>

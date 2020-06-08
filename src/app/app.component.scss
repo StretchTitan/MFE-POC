@@ -56,3 +56,70 @@
     display: flex;
     margin-left: 16px;
 }
+
+.alert-overlay {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+
+    &.visible {
+        display: flex;
+    }
+}
+
+.alert-button {
+    right: 18px;
+    position: absolute;
+    align-self: center;
+}
+
+.panel-overlay {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #f8f8f8;
+    align-items: center;
+    justify-content: center;
+
+    &.visible {
+        display: flex;
+    }
+}
+
+.panel-button {
+    right: 118px;
+    position: absolute;
+    align-self: center;
+}
+
+.drawer-button {
+    right: 236px;
+    position: absolute;
+    align-self: center;
+}
+
+.drawer {
+    display: flex;
+    position: absolute;
+    width: calc(100% - 4px);
+    background: white;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    transition: all .5s linear;
+    visibility: hidden;
+
+    &.isOpen {
+        visibility: visible;
+        height: 600px;
+    }
+}

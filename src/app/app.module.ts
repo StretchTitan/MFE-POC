@@ -12,12 +12,16 @@ import { CustomLazyRegistry } from 'mfe-services-pipes';
 import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AlertComponent } from './alert/alert.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageShellComponent,
-    BillingShellComponent
+    BillingShellComponent,
+    AlertComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
